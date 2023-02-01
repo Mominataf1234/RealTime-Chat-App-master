@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat - Ataf Momin</title>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="/client.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    #logo {
+        height: 50px;
+
+    }
+
+    hr {
+        margin: 0;
+        padding: 0;
+        border-color: rgba(234, 234, 234, 0.386);
+    }
+
+    .container {
+        /* background-color: aqua; */
+        width: 50%;
+        height: 500px;
+        display: block;
+        margin: auto;
+        border-radius: 20px;
+        border: 0.1mm solid rgb(189, 187, 187);
+    }
+
+    .myheading {
+        background-color: purple;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 800;
+        font-size: 20px;
+    }
+
+    .mymargin {
+        margin: 30px 20px;
+    }
+
+    .message {
+        width: 220px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin: 10px;
+        border-radius: 5px;
+        padding: 5px;
+        /* border: 1px solid black; */
+    }
+
+    .right {
+        float: right;
+        clear: both;
+        box-shadow: 2px 2px 8px 2px #888888;
+    }
+
+    .left {
+        float: left;
+        clear: both;
+        box-shadow: 1px 1px 8px 1px #11d7a3;
+    }
+
+    .center {
+        display: block;
+        margin: auto;
+        clear: both;
+        background-color: #b7e4d8;
+        color: rgb(20, 20, 20);
+        text-align: center;
+        font-weight: 700;
+    }
+
+    #messagebox {
+        background-color: ivory;
+        height: 100%;
+        overflow: auto;
+        padding-top: 10px;
+    }
+
+    #messagesendbox,
+    form {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    #send_msg {
+        width: 100%;
+        padding: 5px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 800;
+        font-size: 18px;
+    }
+
+    #sendbtn {
+        width: 80px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: white;
+        background-color: purple;
+        font-size: 18px;
+        padding: 10px;
+        font-weight: 800;
+        border: none;
+    }
+
+    @media (max-width:730px) {
+        .container {
+            width: 95%;
+            height: 600px;
+
+        }
+    }
+</style>
+
+<body>
+    <nav>
+        <img src="/images/logo.png" alt="" srcset="" id="logo">
+    </nav>
+    <hr>
+    <div class="mymargin"></div>
+    <div class="container">
+        <div class="myheading">Live Chat</div>
+        <div id="messagebox">
+        </div>
+        <div class="messagesendbox">
+            <form action="#" id="sendcont">
+                <input type="text" name="send_msg" id="send_msg">
+                <button id="sendbtn">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    var element = document.getElementById("messagebox");
+    element.scrollTop = element.scrollHeight;
+</script>
+
+</html>
